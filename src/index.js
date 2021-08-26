@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Sidebar from './Sub/sidebar.js';
-//import Topbar from './Sub/Topbar.js';
+import Topbar from './Sub/Topbar.js';
 
 ReactDOM.render(
   <React.StrictMode>
     <body id="page-top">
-      <Sidebar />
+      <div id="wrapper">
+        <Sidebar />
+        <div id="content-wrapper" class="d-flex flex-column">
+          <Topbar />
+        </div>
+      </div>
     </body>
   </React.StrictMode>,
   document.getElementById('root')
