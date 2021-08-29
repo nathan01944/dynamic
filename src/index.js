@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Sidebar from './Visual/sidebar.js';
-import Topbar from './Visual/Topbar.js';
-import FeaturedBets from './Visual/FeaturedBets.js';
+import Sidebar from './Common/sidebar.js';
+import Topbar from './Common/Topbar.js';
+import FeaturedBets from './Betting/FeaturedBets.js';
 
 ReactDOM.render(
   <React.StrictMode>
