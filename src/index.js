@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Sidebar from './Sub/sidebar.js';
-import Topbar from './Sub/Topbar.js';
+import Sidebar from './Visual/sidebar.js';
+import Topbar from './Visual/Topbar.js';
+import FeaturedBets from './Visual/FeaturedBets.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,7 +11,14 @@ ReactDOM.render(
       <div id="wrapper">
         <Sidebar />
         <div id="content-wrapper" class="d-flex flex-column">
-          <Topbar />
+          <div id="content">
+            <div id="content-wrapper" class="d-flex flex-column">
+              <Topbar />
+            </div>
+            <div class="container-fluid"> 
+              <FeaturedBets />
+            </div>
+          </div>
         </div>
       </div>
     </body>
