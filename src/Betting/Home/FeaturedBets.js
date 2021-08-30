@@ -1,4 +1,4 @@
-import BetInterface3x2 from './BetInterface3x2';
+import BetInterface3x2 from '../BetInterface3x2';
 
 const BetCard = ({ num }) => {
     return (

@@ -1,4 +1,5 @@
-import { Link } from 'react-router';
+//import { Link } from 'react-router';
+import { BrowserRouter, Route, Link, Router } from "react-router-dom"
 
 function Sidebar() {
     return (
@@ -32,7 +33,6 @@ function Sidebar() {
                         aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Submit Bet</span>
-                        <li><Link to="Betting/SubmitBet">Submit Bet</Link></li>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">

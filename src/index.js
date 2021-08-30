@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
 import './index.css';
 import Sidebar from './Common/sidebar.js';
 import Topbar from './Common/Topbar.js';
-import FeaturedBets from './Betting/FeaturedBets.js';
+
+import Home from './Betting/Home/index.js';
+import SubmitBet from './Betting/SubmitBet/Index';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,9 +20,29 @@ ReactDOM.render(
             <div id="content-wrapper" class="d-flex flex-column">
               <Topbar />
             </div>
-            <div class="container-fluid"> 
-              <FeaturedBets />
-            </div>
+
+            <Router>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/SubmitBet">SubmitBet</Link>
+                  </li>
+                </ul>
+              </nav>
+
+              <Switch>
+                <Route path="/" exact>
+                  <Home />
+                </Route>
+                <Route path="/SubmitBet" exact>
+                  <SubmitBet />
+                </Route>
+              </Switch>
+            </Router>
+
           </div>
         </div>
       </div>
@@ -30,3 +55,12 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 //reportWebVitals();
+
+/*
+            <Router>
+              <Switch>
+                <Route path="/" exact>
+                    <Home />
+                </Route>
+              </Switch>
+            </Router>*/
