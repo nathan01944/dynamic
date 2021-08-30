@@ -20,7 +20,6 @@ const BetInterface3x2 = ({num}) => {
   return (
     <>
       <Description 
-        //home_team= {game1.get('home_team')}
         home_team = {game1[0].team}
         away_team= {game1[1].team}
       />

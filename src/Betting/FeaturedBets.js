@@ -55,5 +55,5 @@ function FeaturedBets() {
         </div>
     );
 }
-  
+
 export default FeaturedBets;
