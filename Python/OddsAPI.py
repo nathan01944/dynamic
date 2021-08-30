@@ -9,7 +9,7 @@ SPORT = 'baseball_mlb' # use the sport_key from the /sports endpoint below, or u
 
 REGIONS = 'us' # uk | us | eu | au. Multiple can be specified if comma delimited
 
-MARKETS = 'h2h' # h2h | spreads | totals. Multiple can be specified if comma delimited
+MARKETS = 'h2h,spreads,totals' # h2h | spreads | totals. Multiple can be specified if comma delimited
 
 ODDS_FORMAT = 'american' # decimal | american
 
@@ -70,5 +70,5 @@ else:
     print('Remaining requests', odds_response.headers['x-requests-remaining'])
     print('Used requests', odds_response.headers['x-requests-used'])
 
-with open('data.txt', 'w') as outfile:
+with open('src//data//rawOutAPI.json', 'w') as outfile:
     json.dump(odds_json, outfile)
