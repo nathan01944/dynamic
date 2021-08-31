@@ -5,7 +5,10 @@ import json
 # Get a free API key at https://api.the-odds-api.com/
 API_KEY = 'a2e20b2177f3038f176948fe70f22321'
 
-SPORT = 'baseball_mlb' # use the sport_key from the /sports endpoint below, or use 'upcoming' to see the next 8 games across all sports
+SPORT = 'americanfootball_nfl' # use the sport_key from the /sports endpoint below, or use 'upcoming' to see the next 8 games across all sports
+    #americanfootball_nfl_super_bowl_winner
+    #americanfootball_nfl
+    #basketball_nba
 
 REGIONS = 'us' # uk | us | eu | au. Multiple can be specified if comma delimited
 
@@ -22,19 +25,19 @@ DATE_FORMAT = 'iso' # iso | unix
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# sports_response = requests.get(
-#     'https://api.the-odds-api.com/v4/sports',
-#     params={
-#         'api_key': API_KEY
-#     }
-# )
-#
-#
-# if sports_response.status_code != 200:
-#     print(f'Failed to get sports: status_code {sports_response.status_code}, response body {sports_response.text}')
-#
-# else:
-#     print('List of in season sports:', sports_response.json())
+sports_response = requests.get(
+    'https://api.the-odds-api.com/v4/sports',
+    params={
+        'api_key': API_KEY
+    }
+)
+
+
+if sports_response.status_code != 200:
+    print(f'Failed to get sports: status_code {sports_response.status_code}, response body {sports_response.text}')
+
+else:
+    print('List of in season sports:', sports_response.json())
 
 
 
@@ -64,7 +67,7 @@ if odds_response.status_code != 200:
 else:
     odds_json = odds_response.json()
     print('Number of events:', len(odds_json))
-    print(odds_json)
+    #print(odds_json)
 
     # Check the usage quota
     print('Remaining requests', odds_response.headers['x-requests-remaining'])
