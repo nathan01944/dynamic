@@ -1,12 +1,16 @@
 import BetInterface3x2 from '../BetInterface3x2';
+import MLBdata from '../../data/formatted.json'
 
-const BetCard = ({ num }) => {
+const BetCard = ({ num, oddsdata }) => {
     return (
         <div class="col-xl-6 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
-                        <BetInterface3x2  num={num}/>
+                        <BetInterface3x2  
+                            num={num}
+                            oddsdata={oddsdata}
+                        />
                     </div>
                 </div>
             </div>
@@ -44,7 +48,10 @@ function FeaturedBets() {
                             <div class="row">
 
                                 {[...Array(10)].map((x, i) =>
-                                    <BetCard num={i} />
+                                    <BetCard 
+                                        num={i} 
+                                        oddsdata = {MLBdata}
+                                    />
                                 )}
 
                             </div>
